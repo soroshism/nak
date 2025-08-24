@@ -1,0 +1,34 @@
+{
+  "name": "nak-challange",
+  "homepage": "https://soroshism.dev/nak",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "axios": "^1.11.0",
+    "i18next": "^23.11.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.51.5",
+    "react-i18next": "^14.1.3",
+    "react-router-dom": "^6.23.1",
+    "react-toastify": "^10.0.6",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.1"
+  }
+}
