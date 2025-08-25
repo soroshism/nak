@@ -3,6 +3,7 @@ import Layout from "../components/layout/Layout";
 import styled from "@emotion/styled";
 import { getAttributes, addAttribute, type Attribute } from "../api/attributes";
 import { useForm, useFieldArray } from "react-hook-form";
+import { t } from "i18next";
 
 const Table = styled.table`
   width: 100%;
@@ -128,7 +129,7 @@ export default function Attributes() {
 
   return (
     <Layout>
-      <h2>Attributes</h2>
+      <h2>{t("attr.Attributes")}</h2>
 
       {adding ? (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -168,20 +169,20 @@ export default function Attributes() {
               type="button"
               onClick={() => setAdding(false)}
             >
-              Cancel
+              {t("global.cancel")}
             </Button>
-            <Button type="submit">Save</Button>
+            <Button type="submit">{t("global.save")}</Button>
           </div>
         </form>
       ) : (
         <Div>
-          <Button onClick={() => setAdding(true)}>Add Attribute +</Button>
+          <Button onClick={() => setAdding(true)}>{t("attr.AddAttr")}</Button>
           <Table>
             <thead>
               <tr>
                 <Th></Th>
-                <Th>Name</Th>
-                <Th>Values</Th>
+                <Th>{t("attr.name")}</Th>
+                <Th>{t("attr.values")}</Th>
               </tr>
             </thead>
             <tbody>

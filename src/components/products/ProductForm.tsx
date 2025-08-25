@@ -4,6 +4,7 @@ import AttributeSelector from "./AttributeSelector";
 import SKUTable from "./SKUTable";
 import { createProduct, updateProduct, type Product } from "../../api/products";
 import { createSKU, getSKU, type SKU } from "../../api/products";
+import { t } from "i18next";
 
 const Container = styled.div`
   margin-top: 20px;
@@ -150,10 +151,14 @@ export default function ProductForm({
 
       <div style={{ marginTop: "20px" }}>
         <Button variant="secondary" onClick={onCancel}>
-          Cancel
+          {t("global.cancel")}
         </Button>
         <Button onClick={handleSave} disabled={loading}>
-          {loading ? "Saving..." : editMode ? "Update" : "Create"}
+          {loading
+            ? `${t("global.saving")} `
+            : editMode
+            ? `${t("global.update")} `
+            : `${t("global.create")} `}
         </Button>
       </div>
     </Container>

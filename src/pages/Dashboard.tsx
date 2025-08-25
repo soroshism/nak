@@ -22,8 +22,7 @@ export default function Dashboard() {
       <WelcomeBox>
         <h2>{t("dashboard.welcome", { name: user?.name })}</h2>
         <p>
-          I'm very happy you are here, <br />I hope you find this dashboard easy
-          and useful to use 😊
+          {t("dashboard.des1")} <br /> {t("dashboard.des2")}
         </p>
       </WelcomeBox>
     </Layout>

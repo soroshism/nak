@@ -1,4 +1,13 @@
 {
+  "global": {
+    "save": "Save",
+    "saving": "Saving ...",
+    "update": "Update",
+    "create": "Create",
+    "laoding": "Loading",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
   "auth": {
     "signin": "Sign In",
     "signup": "Sign Up",
@@ -8,7 +17,37 @@
     "name": "Name",
     "lastname": "Last Name"
   },
+  "sideBar": {
+    "Attributes": "Attributes",
+    "Products": "Products",
+    "LogOut": "Log Out"
+  },
+  "attr": {
+    "Attributes": "Attributes",
+    "AttributesName": "Attributes Name",
+    "AttributesValue": "Attributes Value",
+    "AddAttr": "Add Attribute +",
+    "name": "Name",
+    "values": "Values"
+  },
   "dashboard": {
-    "welcome": "Hello, {{name}} 👋"
+    "welcome": "Hello, {{name}} 👋",
+    "des1": "I'm very happy you are here,",
+    "des2": "I hope you find this dashboard easy and useful to use 😊"
+  },
+  "product": {
+    "addProduct": "Add Product +",
+    "name": "Name",
+    "count": "Count of SKUs",
+    "action": "Actions",
+    "notFound": "No products found"
+  },
+  "sku": {
+    "list": "SKUs List",
+    "notFound": "No SKUs generated yet. Please add attributes.",
+    "model": "Model",
+    "price": "Price",
+    "inStock": "In Stock",
+    "action": "Action"
   }
 }

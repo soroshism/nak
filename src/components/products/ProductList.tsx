@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import type { Product } from "../../api/products";
+import { t } from "i18next";
 
 const Table = styled.table`
   width: 100%;
@@ -58,25 +59,25 @@ export default function ProductList({
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
-        <Button onClick={onAdd}>Add Product +</Button>
+        <Button onClick={onAdd}>{t("product.addProduct")}</Button>
       </div>
 
       {loading ? (
-        <p>Loading...</p>
+        <p>{t("global.loading")}</p>
       ) : (
         <Table>
           <thead>
             <tr>
               <Th></Th>
-              <Th>Name</Th>
-              <Th>Count of SKUs</Th>
-              <Th>Actions</Th>
+              <Th>{t("product.name")}</Th>
+              <Th>{t("product.count")}</Th>
+              <Th>{t("product.action")}</Th>
             </tr>
           </thead>
           <tbody>
             {products.length === 0 ? (
               <tr>
-                <Td colSpan={4}>No products found</Td>
+                <Td colSpan={4}>{t("product.notFound")}</Td>
               </tr>
             ) : (
               products.map((p, i) => (

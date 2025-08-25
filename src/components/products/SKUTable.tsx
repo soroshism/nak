@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { t } from "i18next";
 
 const Table = styled.table`
   width: 100%;
@@ -33,13 +34,11 @@ type Props = {
 };
 
 export default function SKUTable({ skus, setSkus }: Props) {
-
-const updateSKU = (index: number, field: keyof SKU, value: string) => {
-  const updated = [...skus];
-  updated[index][field] = value;
-  setSkus(updated);
-};
-
+  const updateSKU = (index: number, field: keyof SKU, value: string) => {
+    const updated = [...skus];
+    updated[index][field] = value;
+    setSkus(updated);
+  };
 
   const removeSKU = (index: number) => {
     const updated = skus.filter((_, i) => i !== index);
@@ -48,18 +47,18 @@ const updateSKU = (index: number, field: keyof SKU, value: string) => {
 
   return (
     <div>
-      <h4>SKUs List</h4>
+      <h4>{t("sku.list")}</h4>
       {skus.length === 0 ? (
-        <p>No SKUs generated yet. Please add attributes.</p>
+        <p>{t("sku.notFound")}</p>
       ) : (
         <Table>
           <thead>
             <tr>
               <Th></Th>
-              <Th>Model</Th>
-              <Th>Price</Th>
-              <Th>In Stock</Th>
-              <Th>Actions</Th>
+              <Th>{t("sku.model")}</Th>
+              <Th>{t("sku.price")}</Th>
+              <Th>{t("sku.inStock")}</Th>
+              <Th>{t("sku.action")}</Th>
             </tr>
           </thead>
           <tbody>
@@ -72,7 +71,9 @@ const updateSKU = (index: number, field: keyof SKU, value: string) => {
                     type="number"
                     placeholder="Price"
                     value={sku.price || ""}
-                    onChange={(e) => updateSKU(i, "price", Number(e.target.value))}
+                    onChange={(e) =>
+                      updateSKU(i, "price", Number(e.target.value))
+                    }
                   />
                 </Td>
                 <Td>
@@ -80,7 +81,9 @@ const updateSKU = (index: number, field: keyof SKU, value: string) => {
                     type="number"
                     placeholder="Stock"
                     value={sku.numberInStock || ""}
-                    onChange={(e) => updateSKU(i, "numberInStock", Number(e.target.value))}
+                    onChange={(e) =>
+                      updateSKU(i, "numberInStock", Number(e.target.value))
+                    }
                   />
                 </Td>
                 <Td>

@@ -5,6 +5,7 @@ import avatar from "../../assets/icons/profile.svg";
 import attrIcon from "../../assets/icons/attributes.svg";
 import productIcon from "../../assets/icons/products.svg";
 import out from "../../assets/icons/out.svg";
+import { t } from "i18next";
 
 const SidebarContainer = styled.div`
   width: 220px;
@@ -107,19 +108,19 @@ export default function Sidebar() {
         <Menu>
           <MenuItem to="/attributes">
             <Icon src={attrIcon} alt="Attributes Icon" />
-            Attributes
+            {t("sideBar.Attributes")}
           </MenuItem>
 
           <MenuItem to="/products">
             <Icon src={productIcon} alt="Products Icon" />
-            Products
+            {t("sideBar.Products")}
           </MenuItem>
         </Menu>
       </div>
 
       <LogoutButton onClick={handleLogout}>
         <Icon src={out} alt="Logout" />
-        Log Out
+        {t("sideBar.LogOut")}
       </LogoutButton>
     </SidebarContainer>
   );

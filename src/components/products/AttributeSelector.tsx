@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { getAttributes } from "../../api/attributes";
+import { t } from "i18next";
 
 const Container = styled.div`
   display: flex;
@@ -243,14 +244,14 @@ export default function AttributeSelector({
         {attributes.map((attr, i) => (
           <Row key={i}>
             <SelectWrapper>
-              <Label>Attribute Name</Label>
+              <Label>{t("attr.AttributesName")}</Label>
               <Select value={attr.name} disabled>
                 <option>{attr.name}</option>
               </Select>
             </SelectWrapper>
 
             <SelectWrapper>
-              <Label>Attribute Values</Label>
+              <Label>{t("attr.AttributesValue")}</Label>
               <Select disabled>
                 <option>{attr.values.join(", ")}</option>
               </Select>
@@ -262,7 +263,7 @@ export default function AttributeSelector({
 
         <Row>
           <SelectWrapper>
-            <Label>Attribute Name</Label>
+            <Label>{t("attr.AttributesName")}</Label>
             <Select
               value={selectedAttr}
               onChange={(e) => setSelectedAttr(e.target.value)}
@@ -277,7 +278,7 @@ export default function AttributeSelector({
           </SelectWrapper>
 
           <SelectWrapper>
-            <Label>Attribute Values</Label>
+            <Label>{t("attr.AttributesValue")}</Label>
             <MultiSelect
               options={selectedAttrObj?.values || []}
               selected={selectedValues}
